@@ -13,17 +13,18 @@ namespace day03
                 .Where(l => !string.IsNullOrWhiteSpace(l))
                 .ToList();
 
-            var directions1 = lines[0].Split(',');
-            var directions2 = lines[0].Split(',');
+            Part1(lines);
+        }
 
+        static void Part1(List<string> instructionStrings)
+        {
             int[,] map = new int[20000, 20000];
-
 
             for (int j = 0; j < 2; j++)
             {
                 int x = map.GetLength(0) / 2;
                 int y = map.GetLength(1) / 2;
-                var instructions = lines[j].Split(',');
+                var instructions = instructionStrings[j].Split(',');
 
                 for (int i = 0; i < instructions.Length; i++)
                 {
@@ -96,7 +97,7 @@ namespace day03
                     }
                 }
             }
-
+            
         }
     }
 }
